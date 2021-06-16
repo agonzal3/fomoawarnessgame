@@ -2,7 +2,7 @@
     <div style="display: flex">
         <b-button :disabled="timePassed>timeLimit || counter>items.length-1" variant="danger" @click="syntomFoMO(true)" class="bigbutton" :class="$mq">Síntoma de la FoMO</b-button>
         <div class="center">
-            <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 100 50">
                 <g class="circle">
                     <circle class="elypse" cx="50" cy="25" r="20"/>
                     <text style="color:green" x="50%" y="50%" text-anchor="middle" fill="black" dy=".3em">{{formattedTimeLeft}}</text>
@@ -116,8 +116,8 @@ export default {
             return `${(this.timeFraction * FULL_DASH_ARRAY).toFixed(0)} 125`;
         },
         timeFraction() {
-            const rawTimeFraction = this.timeLeft / this.timeLimit
-            if(this.timeLeft>0){
+            const rawTimeFraction = this.timeLeft() / this.timeLimit
+            if(this.timeLeft()>0){
                 return rawTimeFraction - (1 / this.timeLimit) * (1 - rawTimeFraction)
             } else{
                 return 0;
@@ -140,32 +140,16 @@ export default {
         },
         remainingPathColor() {
             const { alert, warning, info } = this.colorCodes;
-            if (this.timeLeft <= alert.threshold) {
+            if (this.timeLeft() <= alert.threshold) {
                 return alert.color;
-            } else if (this.timeLeft <= warning.threshold) {
+            } else if (this.timeLeft() <= warning.threshold) {
                 return warning.color;
             } else {
                 return info.color;
             }
         },
-        timeLeft() {
-            let returnn;
-            if(this.counter<this.items.length && this.timePassed<=TIME_DEFINED){
-                this.timestop = this.timePassed;
-                returnn = this.timeLimit - this.timePassed;
-            } else {
-                if(this.show===true){
-                    this.$refs['my-modal'].show();
-                } else {
-                    this.$refs['my-modal'].hide();
-                }
-                
-                returnn = this.timeLimit - this.timestop;
-            }
-            return returnn;
-        },
         formattedTimeLeft() {
-            const timeLeftt = this.timeLeft
+            const timeLeftt = this.timeLeft()
             // The largest round integer less than or equal to the result of time divided being by 60.
             const minutes = Math.floor(timeLeftt / 60)
             // Seconds are the remainder of the time divided by 60 (modulus operator)
@@ -184,6 +168,22 @@ export default {
         },
     },
     methods:{
+        timeLeft() {
+            let returnn;
+            if(this.counter<this.items.length && this.timePassed<=TIME_DEFINED){
+                this.timestop = this.timePassed;
+                returnn = this.timeLimit - this.timePassed;
+            } else {
+                if(this.show === true){
+                    this.$refs['my-modal'].show();
+                } else {
+                    this.$refs['my-modal'].hide();
+                }
+                
+                returnn = this.timeLimit - this.timestop;
+            }
+            return returnn;
+        },
         startTimer() {
             this.timerInterval = setInterval(() => (this.timePassed += 1), 1000);
         },

@@ -46,8 +46,8 @@ import fomo_bed from "../assets/Concept1/fomoBed2.jpg";
 import fomo_like from "../assets/Concept1/fomoLike.jpg";
 import fomo_parents from "../assets/Concept1/fomoParents.jpg";
 import fomo_wakeup from "../assets/Concept1/fomoWakeup.jpg";
-import giftwin from "../assets/giphy.gif";
-import giftlose from "../assets/giphy2.gif";
+import giftwin from "../assets/Concept1/giphy.gif";
+import giftlose from "../assets/Concept1/giphy2.gif";
 
 
 export default {
@@ -115,10 +115,6 @@ export default {
                 return giftlose
             }
         },
-        // margin_top(){
-        //     let height = this.$refs.infoBox.clientHeight;
-        //     return (100 - height)/2;
-        // }
     },
     created(){
         console.log('Created')

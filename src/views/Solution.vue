@@ -49,10 +49,8 @@
             <div v-if="actualPage === 2">
                 <h5>Si has llegado hasta aquí significa que has terminado el "juego".</h5>
 
-                <p>Para terminar me gustaría robarte 10 minutos más respondiendo esta enquesta de evaluación.
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScK7yGG1r-8PNd3TMySSD_k_2MqmgLGicdbqb4oYEEm7QOqiQ/viewform" target="_blank">
-                        <img style="height:36px;" src="../assets/googleforms.png">
-                    </a>
+                <p>Para terminar me gustaría robarte 5 minutos más respondiendo esta
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScK7yGG1r-8PNd3TMySSD_k_2MqmgLGicdbqb4oYEEm7QOqiQ/viewform" target="_blank"> ENQUESTA DE EVALUACIÓN.</a>
                 </p>
 
                 <p>Si por otra parte quiere volver a jugar ... <br>

@@ -47,6 +47,8 @@
         <Compensation v-if="pasos === 17" :number=2 @enlarge-text="onEnlargeText"/>
         <Textinteract v-if="pasos === 18" v-bind:text="text8" v-bind:responcebutton="responcebutton8" v-on:enlarge-text="onEnlargeText"/>
       </transition>
+      <!-- <Reason1 v-on:enlarge-text="onEnlargeText"/> -->
+
 
     </div>
       <!-- </b-row>
@@ -114,28 +116,7 @@ export default {
         onEnlargeText() {
           this.pasos++;
           // this.view = this.xx[this.steps].name;
-        },
-        start() {
-          document.getElementById("").hidden;
-            this.$confetti.start({
-                particles: [
-                    {
-                    type: 'rect',
-                    dropRate: 40,
-                    size: 15,
-                    },
-                    {
-                    type: 'circle',
-                    dropRate: 40,
-                    size: 15,
-                    },
-                ],
-                windSpeedMax: 3,
-                particlesPerFrame: 4
-            });
-
-            setTimeout(() => this.$confetti.stop(), 400);
-        },
+        }
     },
     computed:{
       

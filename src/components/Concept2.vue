@@ -11,9 +11,7 @@
             </b-row>
         </b-container>
         <br>
-        <div v-if="respuesta === 'correct'">
-          <p>¡¡Muy bien!!</p>
-        </div>
+        <div v-if="respuesta === 'correct'"><p>¡¡Muy bien!!</p></div>
         <div v-if="respuesta === 'wrong'"><p>Inténtalo de nuevo, ahora quedan {{intentos}} de 4 opciones.</p></div>
   </div>
 </template>
