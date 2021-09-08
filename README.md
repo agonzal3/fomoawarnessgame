@@ -1,4 +1,4 @@
-# deploy5
+# TFG - Fomo Awarnes Game
 
 ## Project setup
 ```
@@ -20,5 +20,13 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### [Demo](https://fomoawarnessgame.web.app/)
+
+
+<p dir="rtl">
+  Audiovisual Systems Engineering Final Project Bachelor's degree
+</p>
+
+<div dir="rtl">
+  <img src="https://www.upf.edu/documents/7283915/220614254/UPFt_rgb.png/99b73f76-6b25-8b0d-f297-cdeb13c64962?t=1547110100870" width="200" />
+</div>
