@@ -1,4 +1,4 @@
-# TFG - Fomo Awarnes Game
+# TFG - Fomo Awareness Game
 
 ## Project setup
 ```
